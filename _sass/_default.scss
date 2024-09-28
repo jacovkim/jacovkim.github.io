@@ -64,6 +64,10 @@
   padding-right: 10px;
 }
 
+.menu-content a.active {
+  color: $dark-gray-color;
+}
+
 .social-icons {
   float: right;
 }

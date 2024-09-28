@@ -2,9 +2,9 @@
 layout: default
 ---
 
-<h1>
+<!-- <h1>
   {{ page.title }}
-</h1>
+</h1> -->
 
 <ul class="posts-container">
   {% for post in site.posts %}
@@ -17,10 +17,10 @@ layout: default
         <h3>{{ post.date | date: '%Y' }}</h3>
       {% endif %}
     {% endunless %}
-    <a href="{{ site.github.url }}{{ post.url }}">{{ post.title }}</a><p class="post-date"><span>{{ post.date | date: "%B %-d" }}</span></p>
-    <!-- <li itemscope>
+    <li itemscope>
       <a href="{{ site.github.url }}{{ post.url }}">{{ post.title }}</a>
-      <p class="post-date"><span><i class="fa fa-calendar" aria-hidden="true"></i> {{ post.date | date: "%B %-d" }} - <i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</span></p>
-    </li> -->
+      <span class="post-date">{{ post.date | date: "%B %-d" }}</span>
+      <p class="post-description"><span>{{ post.description | description: "" }}</span></p>
+    </li>
   {% endfor %}
 </ul>

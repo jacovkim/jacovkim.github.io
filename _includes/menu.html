@@ -1,7 +1,9 @@
 <div class="menu">
   <nav class="menu-content">
     {% for item in site.data.settings.menu %}
-      <a href="{{ site.github.url }}/{{ item.url }}">{{ item.name }}</a>
+    {% assign page_url = page.url | remove_first: '/' %}
+    {% assign page_url_with_html = page_url | append: '.html' %}
+      <a href="{{ site.github.url }}/{{ item.url }}" class="{% if page_url_with_html == item.url %}active{% endif %}">{{ item.name }}</a>
     {% endfor %}
   </nav>
   <nav class="social-icons">
